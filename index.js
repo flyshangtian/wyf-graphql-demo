@@ -25,8 +25,7 @@ const books = [
 
 // Schema definition
 const typeDefs = gql`
-
-# A library has a branch and books
+  # A library has a branch and books
   type Library {
     branch: String!
     books: [Book!]
@@ -36,7 +35,6 @@ const typeDefs = gql`
   type Book {
     title: String!
     author(limit: Int): [Author!]
-    libraries
   }
 
   # An author has a name
@@ -78,7 +76,6 @@ const resolvers = {
       }
       return myArray;
     },
-
     title(parent) {
       console.log(2);
       return "title";
